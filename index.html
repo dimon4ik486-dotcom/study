@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark's Gym - Тренируйся как хищник!</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .shark-wave {
+            background-image: url('https://avatars.mds.yandex.net/i?id=a681aa12e6b60903cfc5f8483700cdf1109b4797-9046135-images-thumbs&n=13');
+background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .shark-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .shark-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Навигация -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 80 45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 w-8 h-8 mr-2">
+    <!-- Оригинальные path элементы (фигура, которая теперь будет выглядеть относительно маленькой) -->
+    <path d="M2 18v-6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6"/>
+    <path d="M6 14v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
+    <path d="M12 10V8a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"/>
+    <path d="M12 14v6"/>
+    <path d="M9 18h6"/>
+
+    <!-- Path элементы акулы (большие, как вы предоставили) -->
+    <path d="M 75 25 
+             C 70 18 50 10 30 15 
+             L 15 12 
+             L 5 10 
+             L 10 25 
+             L 5 40 
+             L 15 38 
+             L 30 35 
+             C 50 40 70 32 75 25 Z"/>
+
+    <!-- Пасть акулы: изогнутая линия, предполагающая открытую пасть или линию челюсти -->
+    <path d="M 70 27 C 60 30 50 30 45 28"/>
+
+    <!-- Жабры: три короткие изогнутые линии за глазом -->
+    <path d="M 40 23 C 38 24 38 26 40 27"/>
+    <path d="M 37 23 C 35 24 35 26 37 27"/>
+    <path d="M 34 23 C 32 24 32 26 34 27"/>
+
+    <!-- Глаз акулы: увеличенный и перенесенный -->
+    <path d="M 55 22 A 2 2 0 1 0 55 22.0002 Z"/>
+
+    <!-- Спинной плавник: более заостренный и изогнутый -->
+    <path d="M 50 18 C 52 10 55 10 57 18 Z"/>
+
+    <!-- Грудной плавник: более выраженный и изогнутый, как крыло -->
+    <path d="M 45 30 C 50 35 55 35 50 28 Z"/>
+
+    <!-- Нижний (анальный/тазовый) плавник: маленький треугольник для детализации -->
+    <path d="M 25 35 L 28 38 L 31 35 Z"/>
+</svg>
+<span class="font-bold text-xl text-gray-800">SHARK'S GYM</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-gray-800 hover:text-blue-500">Главная</a>
+                    <a href="#services" class="nav-link text-gray-800 hover:text-blue-500">Услуги</a>
+                    <a href="#prices" class="nav-link text-gray-800 hover:text-blue-500">Цены</a>
+                    <a href="#trainers" class="nav-link text-gray-800 hover:text-blue-500">Тренеры</a>
+                    <a href="#contacts" class="nav-link text-gray-800 hover:text-blue-500">Контакты</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6 text-gray-800"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Герой секция -->
+    <section class="shark-wave py-20 text-white hovered-element">
+        <div class="container mx-auto px-6 text-center hovered-element">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gray-900 bg-opacity-80 px-4 py-2 rounded-lg hovered-element">СТАНЬ <span class="text-blue-400">ХИЩНИКОМ</span></h1>
+        <p class="text-xl md:text-2xl mb-12 bg-gray-900 bg-opacity-80 px-4 py-2 rounded-lg hovered-element">Тренируйся как <span class="font-bold text-blue-400">акула</span> - безжалостно и эффективно!</p>
+<div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#prices" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">ЗАПИСАТЬСЯ</a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full transition duration-300">УЗНАТЬ БОЛЬШЕ</a>
+            </div>
+        </div>
+    </section>
+    <!-- Рекламный ролик -->
+    <section class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">СМОТРИТЕ НАШ РЕКЛАМНЫЙ РОЛИК</h2>
+            <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl">
+                <iframe class="w-full h-96" src="https://www.youtube.com/embed/VIDEO_ID" 
+                        title="Shark's Gym - Тренируйся как хищник!" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+<!-- Преимущества -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">ПОЧЕМУ МЫ ЛУЧШИЕ?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="shark-card bg-gray-50 p-8 rounded-lg text-center">
+                    <i data-feather="zap" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">МОЩНЫЕ ТРЕНИРОВКИ</h3>
+                    <p class="text-gray-600">Наш зал оборудован по последнему слову техники. Здесь вас ждут только профессиональные тренажеры.</p>
+                </div>
+                <div class="shark-card bg-gray-50 p-8 rounded-lg text-center">
+                    <i data-feather="users" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">ОПЫТНЫЕ ТРЕНЕРЫ</h3>
+                    <p class="text-gray-600">Наши тренеры - настоящие профессионалы с богатым опытом работы и индивидуальным подходом к каждому.</p>
+                </div>
+                <div class="shark-card bg-gray-50 p-8 rounded-lg text-center">
+                    <i data-feather="heart" class="w-12 h-12 mx-auto text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">ЗДОРОВЫЙ ОБРАЗ ЖИЗНИ</h3>
+                    <p class="text-gray-600">Мы не просто качаем мышцы - мы формируем правильные привычки и здоровый образ жизни.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">НАШИ УСЛУГИ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="shark-card bg-white p-6 rounded-lg">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="http://static.photos/sport/640x360/2" alt="Персональные тренировки" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ПЕРСОНАЛЬНЫЕ ТРЕНИРОВКИ</h3>
+                    <p class="text-gray-600 mb-4">Индивидуальный подход и максимальный результат под руководством опытного тренера.</p>
+                    <a href="#prices" class="text-blue-500 font-semibold flex items-center">Узнать больше <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i></a>
+                </div>
+                <div class="shark-card bg-white p-6 rounded-lg">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="http://static.photos/sport/640x360/1" alt="Групповые занятия" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ГРУППОВЫЕ ЗАНЯТИЯ</h3>
+                    <p class="text-gray-600 mb-4">Энергичные тренировки в команде единомышленников под зажигательную музыку.</p>
+                    <a href="#prices" class="text-blue-500 font-semibold flex items-center">Узнать больше <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i></a>
+                </div>
+                <div class="shark-card bg-white p-6 rounded-lg">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="http://static.photos/sport/640x360/3" alt="Функциональный тренинг" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ФУНКЦИОНАЛЬНЫЙ ТРЕНИНГ</h3>
+                    <p class="text-gray-600 mb-4">Тренировки, которые развивают силу, выносливость и координацию для повседневной жизни.</p>
+                    <a href="#prices" class="text-blue-500 font-semibold flex items-center">Узнать больше <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="prices" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">НАШИ ЦЕНЫ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="shark-card bg-gray-50 p-8 rounded-lg text-center">
+                    <h3 class="text-xl font-bold mb-4">СТАНДАРТ</h3>
+                    <div class="text-4xl font-bold mb-6">2 500₽<span class="text-sm font-normal">/месяц</span></div>
+                    <ul class="mb-8 space-y-3 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Посещение в будни</li>
+<li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Групповые занятия</li>
+                        <li class="flex items-center"><i data-feather="x" class="w-4 h-4 mr-2 text-red-500"></i> Персональный тренер</li>
+                        <li class="flex items-center"><i data-feather="x" class="w-4 h-4 mr-2 text-red-500"></i> Солярий и сауна</li>
+                    </ul>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 block">ВЫБРАТЬ</a>
+                </div>
+                <div class="shark-card bg-blue-600 text-white p-8 rounded-lg text-left transform scale-105 shadow-xl">
+<span class="bg-yellow-400 text-blue-800 font-bold px-3 py-1 rounded-full text-sm absolute top-0 right-4 transform translate-y-[-50%]">ПОПУЛЯРНО</span>
+                    <h3 class="text-xl font-bold mb-4 text-center">ПРЕМИУМ</h3>
+                    <div class="text-4xl font-bold mb-6 text-center">5 000₽<span class="text-sm font-normal">/месяц</span></div>
+                    <ul class="mb-8 space-y-3">
+                        <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500 mt-1"></i> Полный доступ в любое время</li>
+                        <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500 mt-1"></i> Все групповые занятия</li>
+                        <li class="flex items-start"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500 mt-1"></i> 4 тренировки с тренером</li>
+                        <li class="flex items-start"><i data-feather="x" class="w-4 h-4 mr-2 text-red-500 mt-1"></i> Солярий и сауна</li>
+</ul>
+                    <div class="text-center">
+                        <a href="#" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">ВЫБРАТЬ</a>
+                    </div>
+</div>
+                <div class="shark-card bg-gray-50 p-8 rounded-lg text-center">
+                    <h3 class="text-xl font-bold mb-4">VIP</h3>
+                    <div class="text-4xl font-bold mb-6">10 000₽<span class="text-sm font-normal">/месяц</span></div>
+                    <ul class="mb-8 space-y-3 text-gray-600">
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Полный доступ 24/7</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Все групповые занятия</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Персональный тренер</li>
+                        <li class="flex items-center"><i data-feather="check" class="w-4 h-4 mr-2 text-green-500"></i> Безлимитный солярий и сауна</li>
+                    </ul>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 block">ВЫБРАТЬ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тренеры -->
+    <section id="trainers" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">НАШИ ТРЕНЕРЫ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="shark-card bg-white p-6 rounded-lg text-center">
+                    <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="https://avatars.mds.yandex.net/get-images-cbir/1917749/tjUuQ5Cxt6Hm_fuxDtwNAQ1731/preview" alt="Иван Петров" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Алексей Сергеевич</h3>
+                    <p class="text-blue-500 mb-4">Тренер по бодибилдингу</p>
+                    <p class="text-gray-600 mb-4">Мастер спорта по пауэрлифтингу, 10 лет тренерского стажа.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><span>VK</span><i data-feather="instagram"></i>
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><i data-feather="vk"></i></a>
+</div>
+                </div>
+                <div class="shark-card bg-white p-6 rounded-lg text-center">
+                    <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="https://avatars.mds.yandex.net/get-images-cbir/770850/CClRN33JoLvcINg94J8BBQ1898/preview" alt="Анна Смирнова" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Татьяна Владимировна</h3>
+                    <p class="text-blue-500 mb-4">Фитнес-тренер</p>
+                    <p class="text-gray-600 mb-4">Специалист по функциональному тренингу и правильному питанию.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-700"></i>
+                        <span>VK</span><i data-feather="instagram"></i></i></a>
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><i data-feather="vk"></i></a>
+                    </div>
+</div>
+                <div class="shark-card bg-white p-6 rounded-lg text-center">
+                    <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="https://avatars.mds.yandex.net/get-images-cbir/401087/PzWZ_1wow2YKg9RlZXCCUw1984/preview" alt="Дмитрий Волков" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ксения Дмитриевна</h3>
+                    <p class="text-blue-500 mb-4">Тренер по кроссфиту</p>
+                    <p class="text-gray-600 mb-4">Участник международных соревнований, создатель авторских программ.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><span>VK</span><i data-feather="instagram"></i></i></a>
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><i data-feather="vk"></i></a>
+                    </div>
+</div>
+                <div class="shark-card bg-white p-6 rounded-lg text-center">
+                    <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+                        <img src="https://avatars.mds.yandex.net/get-images-cbir/4509500/gPjlW1Cxb7rQF9SZ9MrsTA2109/preview" alt="Екатерина Белова" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Анжелика Евгеньевна.</h3>
+                    <p class="text-blue-500 mb-4">Йога-тренер</p>
+                    <p class="text-gray-600 mb-4">Сертифицированный инструктор по хатха-йоге и медитации.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><span>VK</span><i data-feather="instagram"></i></i></a>
+                        <a href="#" class="text-blue-500 hover:text-blue-700"><i data-feather="vk"></i></a>
+                    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">КОНТАКТЫ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">НАШ АДРЕС</h3>
+                    <p class="text-gray-600 mb-6">г. Москва, ул. Хищная, 15, корп. 3</p>
+                    <h3 class="text-xl font-bold mb-4">РЕЖИМ РАБОТЫ</h3>
+                    <p class="text-gray-600 mb-6">Пн-Пт: 7:00 - 23:00<br>Сб-Вс: 9:00 - 22:00</p>
+                    <h3 class="text-xl font-bold mb-4">ТЕЛЕФОН</h3>
+                    <p class="text-gray-600 mb-6">+7 (495) 123-45-67</p>
+                    <h3 class="text-xl font-bold mb-4">EMAIL</h3>
+                    <p class="text-gray-600">info@sharks-gym.ru</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-6">НАПИШИТЕ НАМ</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Имя</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Телефон</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Сообщение</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SHARK'S GYM</h3>
+                    <p class="text-gray-400">Мы создаем хищников из обычных людей. Присоединяйся к нашей стае!</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">БЫСТРЫЕ ССЫЛКИ</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Главная</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Услуги</a></li>
+                        <li><a href="#prices" class="text-gray-400 hover:text-white transition">Цены</a></li>
+                        <li><a href="#trainers" class="text-gray-400 hover:text-white transition">Тренеры</a></li>
+                        <li><a href="#contacts" class="text-gray-400 hover:text-white transition">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">РЕЖИМ РАБОТЫ</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>Пн-Пт: 7:00 - 23:00</li>
+                        <li>Сб-Вс: 9:00 - 22:00</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-center">СОЦИАЛЬНЫЕ СЕТИ</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="bg-gray-700 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition"><span>VK</span></a>
+                    </div>
+</div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 Shark's Gym. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        // Простая анимация при скролле
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
